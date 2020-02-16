@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<head>
+    <link href="./style.css" type="text/css" rel="stylesheet">
+    <title>A Raining Day</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body onload="raining()">
+
+    <iframe src="https://storagefile.yolasite.com/resources/djmistressm__rain-drips.mp3" 
+    allow="autoplay; loop" style="display:none" id="audio">
+    </iframe>
+    <audio id="raindrop" autoplay loop>
+        <source src="https://storagefile.yolasite.com/resources/djmistressm__rain-drips.mp3">
+    </audio>
+
+    <audio id="falltrap" autoplay loop>
+        <source src="https://storagefile.yolasite.com/resources/Sonny_Cher_-_I_Got_You_Babe_Qoret.com.mp3">
+    </audio>
+    <audio id="kicksong" autoplay loop>
+        <source
+            src="https://ia800504.us.archive.org/7/items/NonJeNeRegretteRien/08EdithPiaf-NonJeNeRegretteRien-1960.mp3">
+    </audio>
+
+
+    <script>
+        var falltrap = document.getElementById("falltrap");
+        var kicksong = document.getElementById("kicksong");
+        var raindrop = document.getElementById("raindrop");
+        function playfall() {
+            falltrap.autoplay = true;
+            falltrap.load();
+        }
+        function kick() {
+            kicksong.autoplay = true;
+            kicksong.load();
+        }
+        function stopmusic() {
+            falltrap.pause();
+        }
+        function stopkick() {
+            kicksong.pause();
+        }
+        function raining() {
+            raindrop.autoplay = true;
+            raindrop.loop = true;
+            raindrop.load();
+        }
+    </script>
+
+    <div class="narrative">
+
+        <div class="line1">
+            <p id="intro" class="scene column0">
+                "Dreams feel real while we're in them.
+                It's only when we wake up that we realize something was actually strange."
+                <br>
+                <a onclick="playfall();raining()" href="#fall">Fall</a>
+            </p>
+
+            <div id="trap" class="scene column2">
+                <p>It seems like a road that never ends...</p>
+            </div>
+
+            <div id="goBackToHome1" class="scene column1">
+                <p>It's a normal Sunday, nothing special.
+                    You finish your homework, do the laundry, and watch a film as usual.
+                    It's 10:00 at night, you plug in you phone charger and
+                    <a onclick="playfall();raining()" href="#fall2">go to bed</a>
+                </p>
+            </div>
+
+            <div id="goToTheCafeAtTheEndOfTheRoad" class="scene column3">
+                <p>You walk for a long time, but the road seems endlessly.
+                    You legs are heavy and the sense of time has lost.
+                    It's a path that never ends. You feel hopeless.</p>
+                <p class="option">You walk to the edge of the bridge and <a onclick="kick()" href="#wake">jump to the
+                        river</a>
+                    <br>
+                    You decide to <a onclick="raining()" href="#trap">keep walking</a></p>
+            </div>
+        </div>
+
+
+        <div class="line2">
+            <div id="fall0" class="scene column0">
+                <p>You wake up and open your eyes but the room is in darkness.
+                    It's raining outside. You check the time on your phone.</p>
+                <p class="option">It's midnight, <a onclick="playfall();raining()" href="#fall">go back to sleep</a>
+                    <br>
+                    It's midnight, but you go out to <a onclick="stopmusic();raining()" href="#check">check</a>
+                    <br>
+                    It's 9:00 am in the <a onclick="stopmusic();raining()" href="#morning">morning</a>
+                </p>
+            </div>
+
+            <div id="goBackToHome" class="scene column2">
+                <p>It's a normal Sunday, nothing special.
+                    You finish your homework, do the laundry, and watch a film as usual.
+                    It's 10:00 at night, you plug you phone charger and
+                    <a onclick="playfall();raining()" href="#fall1">go to bed</a></p>
+            </div>
+
+            <div id="checkTheCar" class="scene column1">
+                <p>You walk to the car, the driver says there is nothing wrong.</p>
+                <p class="option">You decide to <a href="#goToTheCafeAtTheEndOfTheRoad">
+                        go to the coffee shop at the end of the road</a>
+                    <br>
+                    You are tired and <a onclick="playfall();raining()" href="#fall0">go back to home</a>
+                </p>
+            </div>
+
+            <div id="morningTrap" class="scene column3">
+                <p>You want to grab a coffee. But there mnust be somthing wrong.<br>
+                    You keep doing the same things everyday, nothing has changed.
+                    It's the same weather, same road. And there are still no cars.
+                    Except for the girl working at the café.<br>
+                    You realized you are somehow trapped and someone is monitoring.
+                    You want to escape.
+                </p>
+                <p class="option">You <a onclick="raining()" href="#runOutOfTheStore">run out of the store</a>
+                    <br>
+                    You <a onclick="raining()" href="#goBackToHomeAgain">go home</a>
+                </p>
+            </div>
+        </div>
+
+
+        <div class="line3">
+            <div id="morning" class="scene column0">
+                <p>You want to go to grab a coffe as usual. You walk along the road,
+                    but there are no cars. The weather is so bad,
+                    you decide to go back to home after you have had the coffe.
+                    You arrive at the coffee shop, there is a new girl working at the store.
+                    She says hello to you and asks what you need.<br>
+                    You order a cup of cappuccino and <a onclick="raining()" href="#goBackToHome">go back to home</a></p>
+            </div>
+
+            <div id="goBackToHomeAgain" class="scene column2">
+                <p>It's still not normal, but the only thing you can do is to
+                    keep doing the same things again and again.</p>
+            </div>
+
+            <div id="check" class="scene column3">
+                <p>It's wierd outside, the rain keeps but there is no sound of cars.</p>
+                <p class="option">You walk to a <a onclick="raining()" href="#road">road</a>
+                    <br>
+                    You decide go back to <a onclick="playfall();raining()" href="#fall">sleep</a>
+                </p>
+            </div>
+
+            <div id="road" class="scene column1">
+                <p>It's normally a busy road even at midnight, you keep wallking.
+                    A car passes by and slows down.</p>
+                <p class="option">You ignore the car and <a onclick="raining()"href="#keepWalking">keep walking</a>
+                    <br>
+                    You stop, and go to <a onclick="raining()" href="#checkTheCar">check the car</a>
+                </p>
+            </div>
+
+            <div id="keepWalking" class="scene column2">
+                <p>There is nothing strange instead the only sound is the rain.
+                    The car suddendly changes the direction and rushes to you.</p>
+                <p class="option">You <a onclick="raining()" href="#trap">avoid the car</a>
+                    <br>
+                    The car <a onclick="kick()" href="#wake">hits you</a>
+                </p>
+            </div>
+        </div>
+
+
+        <div class="line4">
+            <div id="fall" class="scene column0">
+                <p>You wake up and open your eyes but the room is in darkness.
+                    It's raining outside. You check the time on your phone.</p>
+                <p class="option">It's midnight, <a onclick="playfall();raining()" href="#fall0">go back to sleep</a>
+                    <br>
+                    It's midnight, but you go out to <a onclick="stopmusic();raining()" href="#check">check</a>
+                    <br>
+                    It's 9:00 am in the <a onclick="stopmusic();raining()" href="#morning">morning</a>
+                </p>
+            </div>
+
+            <div id="fall1" class="scene column3">
+                <p>You wake up and open your eyes but the room is in darkness.
+                    It's raining outside. You check the time on your phone.</p>
+                <p class="option">It's midnight, <a onclick="playfall();raining()" href="#fall">go back to sleep</a>
+                    <br>
+                    It's midnight, but you go out to <a onclick="stopmusic();raining()" href="#check">check</a>
+                    <br>
+                    It's 9:00 am in the <a onclick="stopmusic();raining()" href="#morning1">morning</a>
+                </p>
+            </div>
+
+            <div id="fall2" class="scene column2">
+                <p>You wake up and open your eyes but the room is in darkness.
+                    It's raining outside. You check the time on your phone.</p>
+                <p class="option">It's midnight, <a onclick="playfall();raining()" href="#fall">go back to sleep</a>
+                    <br>
+                    It's midnight, but you go out to <a onclick="stopmusic();raining()" href="#check">check</a>
+                    <br>
+                    It's 9:00 am in the <a onclick="stopmusic();raining()" href="#morningTrap">morning</a>
+                </p>
+            </div>
+
+            <div id="morning1" class="scene column0">
+                <p>You want to go to grab a coffe as usual. You walk along the road, there are no cars just like
+                    yesterday.
+                    The
+                    weather is still bad, you decide to get a coffe and go home.
+                    You arrive at the coffee shop, it's the same girl.
+                    <br>
+                    She says hello to you and give you a cauppuccino.
+                    It's weird, but you take the coffee and <a onclick="raining()" href="#goBackToHome1">go back to home</a>
+                </p>
+            </div>
+
+            <div id="runOutOfTheStore" class="scene column1">
+                <p>It's still that road. Nothing changes.</p>
+                <p class="option">You think it's better to <a onclick="raining()" href="#goBackToHomeAgain">go back</a>
+                    <br>You decide to <a onclick="raining()" href="#goToTheCafeAtTheEndOfTheRoad">get out off this place</a>
+                </p>
+            </div>
+        </div>
+
+
+        <div class="line5">
+            <div id="wake" class="scene column2">
+                <p>You open your eyes on your bed, it's a sunny day.
+                    <br><br>
+                    -THE END
+                </p>
+                <p>
+                    <a onclick="stopkick();raining()" href="#intro">Fall Again</a>
+                </p>
+            </div>
+        </div>
+
+        <p><br><br><br><br><br><br><br><br><br></p>
+    </div>
+
+
+
+</body>
+
+</html>
